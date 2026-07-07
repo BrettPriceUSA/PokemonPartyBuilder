@@ -4,9 +4,13 @@ class PokeDex:
         
         self.DexList = []
 
-    def addToDex(self, pokemon: Pokemon):
-        self.DexList.append(pokemon)
+    def addToDex(self, *pokemon):
+        for individualPokemon in pokemon:
+            self.DexList.append(individualPokemon)
 
+    def pokemonList(self):
+        for pokemon in self.DexList:
+            print(pokemon.name)
 
 
 class Pokemon:
@@ -30,9 +34,10 @@ bulbasaur = Pokemon("Bulbasaur", "Grass", 1)
 charmander = Pokemon("Charmander", "Fire", 4)
 squirtle = Pokemon("Squirtle", "Water", 7)
 
-pikachu.pokeStats()
-bulbasaur.pokeStats()
-charmander.pokeStats()
-squirtle.pokeStats()
+# pikachu.pokeStats()
+# bulbasaur.pokeStats()
+# charmander.pokeStats()
+# squirtle.pokeStats()
 
-kantoDex.addToDex(pikachu)
+kantoDex.addToDex(pikachu, bulbasaur, charmander, squirtle)
+kantoDex.pokemonList()

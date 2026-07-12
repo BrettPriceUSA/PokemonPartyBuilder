@@ -11,7 +11,14 @@ class PokeDex:
     def pokemonList(self):
         for pokemon in self.DexList:
             print(pokemon.name)
-
+    
+    def searchPokemon(self, pokemons):
+        for mons in self.DexList:
+            if pokemons == mons.name:
+                mons.pokeStats()
+                break
+        else:
+            print("This Pokemon has not been discovered yet!")
 
 class Pokemon:
 
@@ -40,4 +47,5 @@ squirtle = Pokemon("Squirtle", "Water", 7)
 # squirtle.pokeStats()
 
 kantoDex.addToDex(pikachu, bulbasaur, charmander, squirtle)
-kantoDex.pokemonList()
+#kantoDex.pokemonList()
+kantoDex.searchPokemon("Pikachu")

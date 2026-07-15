@@ -12,13 +12,25 @@ class PokeDex:
         for pokemon in self.DexList:
             print(pokemon.name)
     
-    def searchPokemon(self, pokemons):
+    def searchPokemon(self, pokemon_name):
         for mons in self.DexList:
-            if pokemons == mons.name:
+            if pokemon_name == mons.name:
                 mons.pokeStats()
                 break
         else:
             print("This Pokemon has not been discovered yet!")
+
+    def removePokemon(self, pokemon_name):
+        name_found = False
+        for mons in self.DexList:
+            if pokemon_name == mons.name:
+                self.DexLists.remove(mons)
+                print(f"{pokemon_name} has been removed from your dex")
+                name_found = True
+                break
+        if name_found == False:
+            print(f"{pokemon_name} was not found in your pokedex")
+
 
 class Pokemon:
 
